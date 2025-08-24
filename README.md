@@ -2,7 +2,7 @@
 
 Website ini adalah **CV pribadi** yang dirancang untuk menampilkan profil, keahlian, portofolio, pendidikan, dan pengalaman secara profesional. Dibangun dengan pendekatan **responsif** sehingga dapat diakses dengan baik pada berbagai ukuran perangkat, serta menggunakan desain modern yang sederhana namun elegan.  
 
-🔗Anda dapat mengakses CV saya di [**ihsan-ramadhan.github.io/CV-Ihsan**](ihsan-ramadhan.github.io/CV-Ihsan)
+🔗Anda dapat mengakses CV saya di [**ihsan-ramadhan.github.io/CV-Ihsan**](https://ihsan-ramadhan.github.io/CV-Ihsan/)
 
 ## 🚀 Teknologi yang Digunakan
 - **HTML5**
