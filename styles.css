@@ -11,7 +11,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  padding: 30px;
+  padding: 25px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -21,10 +21,10 @@ body {
   background: linear-gradient(160deg, rgba(5,3,29,0.9), rgba(11,54,82,0.9));
   color: white;
   border-radius: 15px;
-  padding: 25px;
+  padding: 15px;
   max-width: 1000px;
   width: 100%;
-  margin: 40px 5px;
+  margin: 35px 5px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -83,10 +83,16 @@ a:hover {
 }
 
 .about-section h3 {
-  font-size: 1.6em;
+  font-size: 1.5em;
   margin: 0 20px 12px 20px;
   color: white;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+}
+
+.about-section h4 {
+  font-size: 1.1em;
+  margin: 0 20px 5px 20px;
   padding-bottom: 5px;
 }
 
@@ -118,4 +124,22 @@ a:hover {
       align-items: center;
       margin: 0;
     }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin: 0 20px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
