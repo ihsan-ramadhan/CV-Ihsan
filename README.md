@@ -14,104 +14,97 @@ Proyek ini menggunakan **Bootstrap 5.3.7** sebagai basis, kemudian dimodifikasi 
 
 ### 🔧 Modifikasi Utama
 
-1. **Background Override**  
-   Bootstrap default tidak menggunakan gambar latar. Di sini diganti dengan kombinasi `background-image` dan **linear-gradient** untuk menciptakan kesan modern.  
+1. **Kustomisasi Navbar dengan Hamburger Menu**    
+   Navbar Bootstrap dimodifikasi dengan hamburger menu kustom untuk layar kecil (≤768px), menggunakan `nav-toggle` dan animasi CSS untuk transisi halus.  
    ```css
-   body {
-     background-image: url('assets/bg.jpg');
-     background-size: cover;
-     background-position: center;
-     background-attachment: fixed;
-   }
+    .nav-toggle:checked ~ .nav-links {
+      max-height: 500px;
+    }
+    .nav-toggle-label .hamburger {
+      transition: all 0.3s ease-in-out;
+    }
 
-   .profile-container {
-     background: linear-gradient(160deg, rgba(5,3,29,0.9), rgba(11,54,82,0.9));
-   }
-
-2. **Profile Container dengan Efek Modern**
-   Ditambahkan **box-shadow** dan **border-radius** untuk memberikan kedalaman visual.
+2. **Background Override**    
+   Bootstrap default tidak menggunakan gambar latar. Di sini diganti dengan kombinasi `background-image` dan **linear-gradient** untuk menciptakan kesan modern.
 
    ```css
-   .profile-container {
-     border-radius: 15px;
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-     padding: 25px;
-     max-width: 1000px;
-   }
+    body {
+      background-image: url('assets/bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+    .profile-container {
+      background: linear-gradient(160deg, rgba(5,3,29,0.9), rgba(11,54,82,0.9));
    ```
 
-3. **Profile Image Kustom**
-   Mengubah foto profil menjadi bulat sempurna dengan border putih, serta memanfaatkan `object-fit: cover`.
+3. **Tombol Back-to-Top**  
+  Ditambahkan tombol`Back to Top` dengan desain melayang untuk navigasi lebih mudah.
 
    ```css
-   .profile-image {
-     width: 140px;
-     height: 140px;
-     border-radius: 100%;
-     border: 4px solid white;
-     object-fit: cover;
-   }
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(109, 128, 141, 0.451);
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
    ```
 
-4. **Contact Section dengan Flexbox Kustom**
-
-   ```html
-   <div class="contact-row">
-     <div class="contact-column">
-       <li>☎️ +62 823-7927-2365</li>
-       <li>✉️ m.ihsan.r30@gmail.com</li>
-     </div>
-     <div class="contact-column">
-       <li>🔗 <a href="#">LinkedIn</a></li>
-       <li>💻 <a href="#">GitHub</a></li>
-     </div>
-   </div>
-   ```
+4. **Video Portofolio Proyek Responsif**  
+    Video proyek (misalnya, Roblox - Tower Indonesia, Space Invaders) ditampilkan dalam container responsif menggunakan `padding-bottom: 50%` untuk menjaga rasio aspek.
 
    ```css
-   .contact-row {
-     display: flex;
-     justify-content: center;
-   }
-
-   .contact-column {
-     display: flex;
-     flex-direction: column;
-     margin: 5px 40px;
-   }
+    .video-container {
+      position: relative;
+      padding-bottom: 50%;
+      height: 0;
+      overflow: hidden;
+    }
    ```
 
-5. **Tipografi & Daftar Kustom**
+5. **Tipografi & Daftar Kustom**  
    Heading diberi garis bawah dekoratif, sedangkan daftar menggunakan `list-style-type: circle`.
 
    ```css
-   .about-section h3 {
-     font-size: 1.6em;
-     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-     padding-bottom: 5px;
-   }
+    .about-section h3 {
+      font-size: 1.5em;
+      margin: 15px 20px 12px 20px;
+      color: white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 5px;
+    }
 
-   .about-section li {
-     list-style-type: circle;
-     margin: 5px 25px;
-   }
+    .about-section li {
+      line-height: 1.5;
+      color: rgb(255, 255, 255);
+      list-style-type: circle;
+      margin: 5px 25px 5px 5px;
+      text-align: left;
+    }
    ```
 
-6. **Media Query Kustom**
-   Untuk responsivitas, dibuat aturan tambahan pada breakpoint `768px`. Dengan ini, kontak berubah menjadi susunan kolom saat layar kecil.
-
+6. **Media Query Kustom**  
+   Penyesuaian pada breakpoint ≤768px untuk navbar, kontak, dan ukuran font, meningkatkan pengalaman pengguna di perangkat mobile.
+ 
    ```css
-   @media (max-width: 768px) {
-     .contact-row {
-       flex-direction: column;
-       align-items: center;
-     }
-
-     .contact-column {
-       width: 100%;
-       align-items: center;
-       margin: 0;
-     }
-   }
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
    ```
 Dibuat dengan ❤️ oleh **Muhammad Ihsan Ramadhan**
