@@ -11,10 +11,42 @@ body {
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  padding: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  background: rgba(5,3,29,0.9);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
 }
 
 .profile-container {
@@ -24,7 +56,7 @@ body {
   padding: 15px;
   max-width: 1000px;
   width: 100%;
-  margin: 35px 5px;
+  margin: 30px 5px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -48,7 +80,6 @@ h1, h2 {
 }
 
 .contact-column {
-  list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;  
@@ -61,6 +92,15 @@ h1, h2 {
   border: none;
   text-align: left;
   margin-bottom: 5px;
+  list-style-type: none;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 15px 20px 12px 20px;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
 }
 
 ul {
@@ -79,12 +119,12 @@ a:hover {
 }
 
 .about-section {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .about-section h3 {
   font-size: 1.5em;
-  margin: 0 20px 12px 20px;
+  margin: 15px 20px 12px 20px;
   color: white;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 5px;
@@ -113,17 +153,37 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .contact-row {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .contact-column {
-      list-style: none;
-      width: 100%;
-      align-items: center;
-      margin: 0;
-    }
+  .contact-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-column {
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+  .navbar a {
+    margin: 5px 8px;
+  }
+  body {
+    font-size: 0.9em;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  .about-section h3 {
+    font-size: 1.1em;
+  }
+  .about-section h4 {
+    font-size: 0.9em;
+  }
 }
 
 .video-container {
