@@ -26,6 +26,12 @@ body {
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
 
 .nav-links {
@@ -56,7 +62,7 @@ body {
   padding: 15px;
   max-width: 1000px;
   width: 100%;
-  margin: 30px 5px;
+  margin: 0 5px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -120,6 +126,11 @@ a:hover {
 
 .about-section {
   margin-top: 20px;
+  scroll-margin-top: 405px;
+}
+
+#keahlian, #portofolio, #pendidikan,  #pengalaman, #kontak {
+  scroll-margin-top: 70px;
 }
 
 .about-section h3 {
@@ -152,40 +163,6 @@ a:hover {
   text-align: left;
 }
 
-@media (max-width: 768px) {
-  .contact-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-column {
-    list-style: none;
-    width: 100%;
-    align-items: center;
-    margin: 0;
-  }
-  .navbar a {
-    margin: 5px 8px;
-  }
-  body {
-    font-size: 0.9em;
-  }
-  h1 {
-    font-size: 2.2em;
-  }
-  h2 {
-    font-size: 1.4em;
-  }
-  h3 {
-    font-size: 1.1em;
-  }
-  .about-section h3 {
-    font-size: 1.1em;
-  }
-  .about-section h4 {
-    font-size: 0.9em;
-  }
-}
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -202,4 +179,165 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.nav-toggle-label,
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative; 
+    margin-bottom: 0px;
+  }
+
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    transition: max-height 0.3s ease-in-out;
+    background: rgba(5,3,29,0.9);
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+    
+  .nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Moved slightly lower */
+    right: 20px;
+  }
+
+  .nav-toggle-label .hamburger,
+  .nav-toggle-label .hamburger::before,
+  .nav-toggle-label .hamburger::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-toggle-label .hamburger {
+    position: relative;
+    top: 3px;
+  }
+
+  .nav-toggle-label .hamburger::before {
+    position: absolute;
+    top: -7px;
+    left: 0;
+  }
+
+  .nav-toggle-label .hamburger::after {
+    position: absolute;
+    top: -14px;
+    left: 0px;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 500px;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label .hamburger {
+    transform: rotate(5deg);;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label .hamburger::before {
+    opacity: 1;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label .hamburger::after {
+    opacity: 1;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-column {
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+
+  .navbar a {
+    margin: 5px 8px;
+  }
+
+  .profile-container {
+    margin: 20px;
+  }
+
+  body {
+    font-size: 0.9em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+
+  .about-section {
+    scroll-margin-top: 320px ;
+  }
+
+  .about-section h3 {
+    font-size: 1.1em;
+  }
+
+  .about-section h4 {
+    font-size: 0.9em;
+  }
+
+  #keahlian, #portofolio, #pendidikan, #pengalaman, #kontak {
+    scroll-margin-top: 20px;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 0 20px;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
